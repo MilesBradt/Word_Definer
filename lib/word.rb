@@ -21,7 +21,7 @@ class Word
   def self.find_by_id(id)
     word_id = id.to_i()
     @@words.each do |word|
-      if word.id == word_id
+      if word.id === word_id
         return word
       end
     end
@@ -30,13 +30,14 @@ class Word
   def self.reassign_ids
     if (@@words != [])
       @@words.each_with_index do |word, i|
-        word.id = i
+        word.id = i + 1
       end
     end
   end
 
   def self.delete_word(id)
-    @@words.delete_at(id)
+    actual_id = id - 1
+    @@words.delete_at(actual_id)
     self.reassign_ids
   end
 

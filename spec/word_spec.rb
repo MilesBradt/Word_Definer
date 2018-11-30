@@ -50,6 +50,23 @@ describe("find_by_id") do
   expect(test_method_second_def.definition).to(eq("Programming language (2)"))
   end
 
+end
 
+describe("delete_word") do
+
+  it("should delete first word in the array") do
+    test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
+    test_word.save
+
+    test_word2 = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
+    test_word2.save
+
+    Word.delete_word(1)
+
+    test_method_first_word = Word.find_by_id(1)
+    expect(test_method_first_word.word).to(eq("Ruby (2)"))
+  end
+
+  
 
 end
