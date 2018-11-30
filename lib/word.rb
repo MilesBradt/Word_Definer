@@ -27,4 +27,17 @@ class Word
     end
   end
 
+  def self.reassign_ids
+    if (@@words != [])
+      @@words.each_with_index do |word, i|
+        word.id = i
+      end
+    end
+  end
+
+  def self.delete_word(id)
+    @@words.delete_at(id)
+    self.reassign_ids
+  end
+
 end
