@@ -75,7 +75,7 @@ describe("delete_word") do
     Word.delete_word(2)
 
     #Works just fine through irb but fails here
-    #ID of this is 11 (what...why?) when it should be 2, this doesn't happen in irb
+    #ID of this is 11 (what...why?) when it should be 2, this doesn't happen in irb when running the exact same steps
     expect(Word.find_by_id(2).word).to(eq("Ruby (3)"))
 
   end

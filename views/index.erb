@@ -1,0 +1,26 @@
+
+<h1>Word Definitions</h1>
+
+<form action="/" method="post">
+  <div class="">
+    <label for="new-word">Add Word</label>
+    <input type="text" id="new-word" name="new-word">
+    <br>
+    <br>
+    <label for="new-definition">Definition</label>
+    <input type="text" id="new-definition" name="new-definition">
+  </div>
+  <br>
+   <button type="submit" class="btn btn-info">Add</button>
+</form>
+
+<h1>Words:</h1>
+<ul>
+  <% if @words.kind_of?(Array) %>
+    <% @words.each do |each| %>
+      <p id='<%= each.id %>'><a href='/output/<%= each.id %>'><%= each.word %></a></p>
+    <% end %>
+  <% else %>
+    <p id='<%= @words.id %>'><a href='/output/<%= @words.id %>'><%= @words.word %></a></p>
+  <% end %>
+</ul>
