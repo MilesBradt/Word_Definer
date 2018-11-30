@@ -19,7 +19,7 @@ class Word
   end
 
   def self.find_by_id(id)
-    word_id = id.to_i()
+    word_id = id.to_i
     @@words.each do |word|
       if word.id === word_id
         return word

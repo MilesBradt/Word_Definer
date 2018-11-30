@@ -10,8 +10,7 @@ describe("find_by_id") do
   test_word2 = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
   test_word2.save
 
-  test_method_first_word = Word.find_by_id(1)
-  expect(test_method_first_word.word).to(eq("Ruby"))
+  expect(Word.find_by_id(1).word).to(eq("Ruby"))
   end
 
   it("should return the second test word based on its ID") do
@@ -22,8 +21,7 @@ describe("find_by_id") do
   test_word2 = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
   test_word2.save
 
-  test_method_second_word = Word.find_by_id(2)
-  expect(test_method_second_word.word).to(eq("Ruby (2)"))
+  expect(Word.find_by_id(2).word).to(eq("Ruby (2)"))
   end
 
   it("should return the first test definition based on its ID") do
@@ -34,8 +32,7 @@ describe("find_by_id") do
   test_def = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
   test_def.save
 
-  test_method_first_def = Word.find_by_id(1)
-  expect(test_method_first_def.definition).to(eq("Programming language"))
+  expect(Word.find_by_id(1).definition).to(eq("Programming language"))
   end
 
   it("should return the second test definition based on its ID") do
@@ -46,8 +43,7 @@ describe("find_by_id") do
   test_word2 = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
   test_word2.save
 
-  test_method_second_def = Word.find_by_id(2)
-  expect(test_method_second_def.definition).to(eq("Programming language (2)"))
+  expect(Word.find_by_id(2).definition).to(eq("Programming language (2)"))
   end
 
 end
@@ -63,10 +59,27 @@ describe("delete_word") do
 
     Word.delete_word(1)
 
-    test_method_first_word = Word.find_by_id(1)
-    expect(test_method_first_word.word).to(eq("Ruby (2)"))
+    expect(Word.find_by_id(1).word).to(eq("Ruby (2)"))
   end
 
-  
+  it("should delete second word in the array") do
+    test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
+    test_word.save
+
+    test_word2 = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
+    test_word2.save
+
+    test_word3 = Word.new({:word => "Ruby (3)", :definition => "Programming language (3)"})
+    test_word3.save
+
+    Word.delete_word(2)
+
+    #Works just fine through irb but fails here
+    #ID of this is 11 (what...why?) when it should be 2, this doesn't happen in irb
+    expect(Word.find_by_id(2).word).to(eq("Ruby (3)"))
+
+  end
+
+
 
 end
