@@ -11,7 +11,7 @@ describe("find_by_id") do
 
   test_word2.save
 
-  expect(Word.find_by_id(2).to(eq("Ruby (2)")))
+  expect(Word.find_by_id(2)).to(eq("Ruby (2)"))
   end
 
 end

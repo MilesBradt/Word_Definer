@@ -22,7 +22,7 @@ class Word
     word_id = id.to_i()
     @@words.each do |word|
       if word.id == word_id
-        return word
+        return word.word
       end
     end
   end
