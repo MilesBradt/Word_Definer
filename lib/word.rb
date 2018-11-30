@@ -29,6 +29,6 @@ class Word
 
 end
 
-test = Word.new({:word => "Ruby", :definition => "Programming language"})
+test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
 
-test2 = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
+test_word2 = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
