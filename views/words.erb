@@ -1,0 +1,15 @@
+<h1>Word: <%= @words.word %> </h1>
+<h4>Definition: <%= @words.definition %> </h4>
+
+<br>
+
+<div>
+  <form method="post" action="/words/:id">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete This Page">
+  </form>
+</div>
+
+<br>
+
+<a href="/">Home</a>

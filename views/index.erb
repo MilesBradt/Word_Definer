@@ -18,9 +18,9 @@
 <ul>
   <% if @words.kind_of?(Array) %>
     <% @words.each do |each| %>
-      <p id='<%= each.id %>'><a href='/output/<%= each.id %>'><%= each.word %></a></p>
+      <p id='<%= each.id %>'><a href='/words/<%= each.id %>'><%= each.word %></a></p>
     <% end %>
   <% else %>
-    <p id='<%= @words.id %>'><a href='/output/<%= @words.id %>'><%= @words.word %></a></p>
+    <p id='<%= @words.id %>'><a href='/words/<%= @words.id %>'><%= @words.word %></a></p>
   <% end %>
 </ul>

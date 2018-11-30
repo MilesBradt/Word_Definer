@@ -19,3 +19,15 @@ post('/') do
   @words = Word.view_all
   erb(:index)
 end
+
+get ('/words/:id') do
+  id = params[:id].to_i
+  @words = Word.find_by_id(id)
+  erb(:words)
+end
+
+delete ("/words/:id") do
+  id = params[:id].to_i - 1
+  @words = Word.delete_word(id)
+  redirect "/"
+end
