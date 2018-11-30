@@ -31,3 +31,8 @@ delete ("/words/:id") do
   @words = Word.delete_word(id)
   redirect "/"
 end
+
+edit ("/words/:id") do
+  new_def = params.fetch("_edit")
+  @words = Word.edit_def(new_def)
+end

@@ -5,8 +5,14 @@
 
 <div>
   <form method="post" action="/words/:id">
+    <label for="new-definition">Edit definition</label>
+    <input type="text" name="_edit" value="edit">
+    <button type="submit" class="btn btn-info">Edit</button>
+  </form>
+
+  <form method="post" action="/words/:id">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete This Page">
+    <button type="submit" class="btn btn-info">Delete</button>
   </form>
 </div>
 

@@ -27,6 +27,8 @@ class Word
     end
   end
 
+  
+
   def self.reassign_ids
     if (@@words != [])
       @@words.each_with_index do |word, i|
