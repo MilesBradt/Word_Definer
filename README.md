@@ -6,8 +6,6 @@
 
 _Asks user to input a word, displays each word entered and are able to click to view and definition they set_
 
-![Screenshot](https://i.imgur.com/S0afVDZ.png)
-
 ## Setup/Installation Requirements
 
 * Clone GitHub URL in terminal
