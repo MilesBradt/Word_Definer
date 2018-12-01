@@ -22,17 +22,22 @@ end
 
 get ('/words/:id') do
   id = params[:id].to_i
+  # binding.pry
   @words = Word.find_by_id(id)
   erb(:words)
 end
 
 delete ("/words/:id") do
-  id = params[:id].to_i - 1
+  id = params[:id].to_i
   @words = Word.delete_word(id)
   redirect "/"
 end
 
-edit ("/words/:id") do
-  new_def = params.fetch("_edit")
-  @words = Word.edit_def(new_def)
+post ("/words/:id") do
+  id = params[:id].to_i
+  new_def = params.fetch("edit")
+  # binding.pry
+  Word.edit_def(new_def, id)
+  @words = Word.find_by_id(id)
+  erb(:words)
 end
