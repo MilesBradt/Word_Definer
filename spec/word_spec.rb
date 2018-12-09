@@ -18,6 +18,14 @@ describe Word do
     end
   end
 
+  describe("#id") do
+    it("returns the id of a word") do
+      test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
+
+      expect(test_word.id).to eq 1
+    end
+  end
+
   describe("#save") do
     it("returns new saved word with attributes") do
       test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
