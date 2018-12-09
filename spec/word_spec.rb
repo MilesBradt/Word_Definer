@@ -65,5 +65,16 @@ describe Word do
     end
   end
 
+  describe("#another_def") do
+    it("adds new definition to an array") do
+      Word.clear
+      test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
+      test_word.save
+      Word.another_def("Testing", 1)
+
+      expect(test_word.definitions[0]).to eq "Testing"
+    end
+  end
+
 
 end

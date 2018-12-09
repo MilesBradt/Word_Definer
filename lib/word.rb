@@ -38,11 +38,11 @@ class Word
     end
   end
 
-  def self.another_def(another_def, id)
+  def self.another_def(defintion, id)
     if (@@words != [])
       @@words.each_with_index do |word, i|
         if (i === id - 1)
-        word.definitions.push(another_def)
+        word.definitions.push(defintion)
         end
       end
     end
