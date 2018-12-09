@@ -38,6 +38,16 @@ class Word
     end
   end
 
+  def self.another_def(another_def, id)
+    if (@@words != [])
+      @@words.each_with_index do |word, i|
+        if (i === id - 1)
+        word.definitions.push(another_def)
+        end
+      end
+    end
+  end
+
   def self.clear
     return @@words = []
   end

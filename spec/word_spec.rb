@@ -47,8 +47,10 @@ describe Word do
     test_word.save
     test_word2 = Word.new({:word => "Ruby (2)", :definition => "Programming language (2)"})
     test_word2.save
+    test_word3 = Word.new({:word => "Ruby (3)", :definition => "Programming language (3)"})
+    test_word3.save
 
-    expect(Word.find_by_id(1).word).to(eq("Ruby"))
+    expect(Word.find_by_id(2).word).to(eq("Ruby (2)"))
     end
   end
 
