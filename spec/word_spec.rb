@@ -74,6 +74,16 @@ describe Word do
 
       expect(test_word.definitions[0]).to eq "Testing"
     end
+
+    it("adds new multiple definitions to an array") do
+      Word.clear
+      test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
+      test_word.save
+      Word.another_def("Testing", 1)
+      Word.another_def("Testing even more", 1)
+
+      expect(test_word.definitions).to eq ["Testing", "Testing even more"]
+    end
   end
 
 
