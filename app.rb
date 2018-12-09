@@ -27,11 +27,6 @@ get ('/words/:id') do
   erb(:words)
 end
 
-delete ("/words/:id") do
-  id = params[:id].to_i
-  @words = Word.delete_word(id)
-  redirect "/"
-end
 
 post ("/words/:id") do
   id = params[:id].to_i

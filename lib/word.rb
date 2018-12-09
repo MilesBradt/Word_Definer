@@ -1,6 +1,6 @@
 class Word
 
-  attr_accessor :word, :definition, :id
+  attr_accessor :word, :definition, :id, :definitions
 
   @@words = []
 
@@ -8,6 +8,7 @@ class Word
     @word = attributes.fetch(:word)
     @definition = attributes.fetch(:definition)
     @id = @@words.length + 1
+    @definitions = []
   end
 
   def save
@@ -28,9 +29,10 @@ class Word
   end
 
   def self.edit_def(new_def, id)
+
     if (@@words != [])
       @@words.each_with_index do |word, i|
-        if (i === id)
+        if (i === id - 1)
         word.definition = new_def
         end
       end
@@ -44,11 +46,5 @@ class Word
       end
     end
   end
-
-  # def self.delete_word(id)
-  #   actual_id = id - 1
-  #   @@words.delete_at(actual_id)
-  #   self.reassign_ids
-  # end
 
 end
