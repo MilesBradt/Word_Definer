@@ -10,6 +10,14 @@ describe Word do
     end
   end
 
+  describe("#definition") do
+    it("returns the definition of a word") do
+      test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
+
+      expect(test_word.definition).to eq 'Programming language'
+    end
+  end
+
   describe("#save") do
     it("returns new saved word with attributes") do
       test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
