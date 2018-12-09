@@ -29,20 +29,11 @@ class Word
   end
 
   def self.edit_def(new_def, id)
-
     if (@@words != [])
       @@words.each_with_index do |word, i|
         if (i === id - 1)
         word.definition = new_def
         end
-      end
-    end
-  end
-
-  def self.reassign_ids
-    if (@@words != [])
-      @@words.each_with_index do |word, i|
-        word.id = i + 1
       end
     end
   end
