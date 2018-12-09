@@ -45,10 +45,10 @@ class Word
     end
   end
 
-  def self.delete_word(id)
-    actual_id = id - 1
-    @@words.delete_at(actual_id)
-    self.reassign_ids
-  end
+  # def self.delete_word(id)
+  #   actual_id = id - 1
+  #   @@words.delete_at(actual_id)
+  #   self.reassign_ids
+  # end
 
 end
