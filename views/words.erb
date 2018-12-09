@@ -1,18 +1,29 @@
 <h1>Word: <%= @words.word %> </h1>
+<% if @definitions = [] %>
 <h4>Definition: <%= @words.definition %> </h4>
-
+<% else %>
+<h4>Definitions: </h4>
+<% end %>
+<ul>
+<% @definitions.each do |defintion| %>
+  <li>
+    <%= defintion %>
+  </li>
+<% end %>
+</ul>
 <br>
 
 <div>
   <form method="post" action="/words/:id">
-    <label for="new-definition">Edit definition</label>
+    <label for="new-definition">Edit first definition</label>
     <input type="text" name="edit">
     <button type="submit" class="btn btn-info">Edit</button>
   </form>
-
-  <form method="post" action="/words/:id">
-    <input type="hidden" name="_method" value="delete">
-    <button type="submit" class="btn btn-info">Delete</button>
+  <br>
+  <form method="post" action="/words/:id/multi">
+    <label for="new-definition">Add new definition</label>
+    <input type="text" name="new">
+    <button type="submit" class="btn btn-info">Add new defintion</button>
   </form>
 </div>
 
