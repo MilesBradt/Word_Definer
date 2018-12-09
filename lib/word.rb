@@ -38,4 +38,8 @@ class Word
     end
   end
 
+  def self.clear
+    return @@words = []
+  end
+
 end
