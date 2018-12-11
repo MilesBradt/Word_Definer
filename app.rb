@@ -37,7 +37,7 @@ end
 
 post ("/words/:id/multi") do
   id = params[:id].to_i
-  new_def = params.fetch("new")
+  new_def = params.fetch("new-definition")
   @words = Word.find_by_id(id)
   @words.another_def(new_def)
   erb(:words)
