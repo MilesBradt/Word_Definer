@@ -29,17 +29,11 @@ class Word
   end
 
   def edit_def(new_def)
-    self.definition = new_def  
+    self.definition = new_def
   end
 
-  def self.another_def(defintion, id)
-    if (@@words != [])
-      @@words.each_with_index do |word, i|
-        if (i === id - 1)
-        word.definitions.push(defintion)
-        end
-      end
-    end
+  def another_def(defintion)
+    self.definitions.push(defintion)
   end
 
   def self.clear

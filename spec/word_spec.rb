@@ -70,7 +70,7 @@ describe Word do
       Word.clear
       test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
       test_word.save
-      Word.another_def("Testing", 1)
+      test_word.another_def("Testing")
 
       expect(test_word.definitions[0]).to eq "Testing"
     end
@@ -79,8 +79,8 @@ describe Word do
       Word.clear
       test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
       test_word.save
-      Word.another_def("Testing", 1)
-      Word.another_def("Testing even more", 1)
+      test_word.another_def("Testing")
+      test_word.another_def("Testing even more")
 
       expect(test_word.definitions).to eq ["Testing", "Testing even more"]
     end
