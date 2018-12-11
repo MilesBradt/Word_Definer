@@ -12,19 +12,12 @@ _Asks user to input a word, displays each word entered and are able to click to 
 * Run bundle install in terminal
 * type ruby app.rb
 * Go to http://localhost:4567
+* Open on heroku: https://serene-mountain-19830.herokuapp.com/
 
 ## Known Bugs
 
-  * _For some reason when trying to edit the word's definition it gives a no method error and I have zero clue what could be wrong. Screenshots below on what happens_
-
-  * _.word and .definition are both able to be read with no issues_
-
-  ![Screenshot](https://i.imgur.com/Fn5jyPw.png)
-
-  *  _After being replaced, definition is properly edited but I'm getting no method errors_
-
-  ![Screenshot](https://i.imgur.com/kwgyNZW.png)
-
+* Heroku app crashes but works fine on broswer, zero idea why.
+  
 
 ## Technologies Used
 _Ruby/Sinatra_
