@@ -30,8 +30,6 @@ end
 post ("/words/:id") do
   id = params[:id].to_i
   new_def = params.fetch("edit")
-  word = Word.find_by_id(id)
-  @definitions = word.definitions
   Word.edit_def(new_def, id)
   @words = Word.find_by_id(id)
   erb(:words)
@@ -41,8 +39,8 @@ post ("/words/:id/multi") do
   id = params[:id].to_i
   new_def = params.fetch("new")
   Word.another_def(new_def, id)
-  # binding.pry
-  this_word = Word.find_by_id(id)
-  @definitions = this_word.definitions
+  binding.pry
+  @words = Word.find_by_id(id)
+
   erb(:words)
 end

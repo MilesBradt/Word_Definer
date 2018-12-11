@@ -1,11 +1,11 @@
 <h1>Word: <%= @words.word %> </h1>
-<% if @definitions = [] %>
+
 <h4>Definition: <%= @words.definition %> </h4>
-<% else %>
+
 <h4>Definitions: </h4>
-<% end %>
+
 <ul>
-<% @definitions.each do |defintion| %>
+<% @words.definitions.each do |defintion| %>
   <li>
     <%= defintion %>
   </li>
@@ -14,13 +14,13 @@
 <br>
 
 <div>
-  <form method="post" action="/words/:id">
+  <form method="post" action="/words/<%= @words.id %>">
     <label for="new-definition">Edit first definition</label>
     <input type="text" name="edit">
     <button type="submit" class="btn btn-info">Edit</button>
   </form>
   <br>
-  <form method="post" action="/words/:id/multi">
+  <form method="post" action="/words/<%= @words.id %>/multi">
     <label for="new-definition">Add new definition</label>
     <input type="text" name="new">
     <button type="submit" class="btn btn-info">Add new defintion</button>
