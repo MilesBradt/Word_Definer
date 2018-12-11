@@ -30,17 +30,15 @@ end
 post ("/words/:id") do
   id = params[:id].to_i
   new_def = params.fetch("edit")
-  Word.edit_def(new_def, id)
   @words = Word.find_by_id(id)
+  @words.edit_def(new_def)
   erb(:words)
 end
 
 post ("/words/:id/multi") do
   id = params[:id].to_i
   new_def = params.fetch("new")
-  Word.another_def(new_def, id)
-
   @words = Word.find_by_id(id)
-
+  @words.another_def(new_def)
   erb(:words)
 end
