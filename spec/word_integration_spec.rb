@@ -11,7 +11,7 @@ describe 'the word creation path', {:type => :feature} do
   it 'takes the user to the homepage where they can add words and definitions' do
     visit '/'
     fill_in('new-word', :with => 'Ruby')
-    click_button('add')
+    click_button('Add Word')
     expect(page).to have_content('Ruby')
   end
 end
