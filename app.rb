@@ -39,7 +39,7 @@ post ("/words/:id/multi") do
   id = params[:id].to_i
   new_def = params.fetch("new")
   Word.another_def(new_def, id)
-  binding.pry
+
   @words = Word.find_by_id(id)
 
   erb(:words)

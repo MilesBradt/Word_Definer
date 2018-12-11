@@ -28,14 +28,8 @@ class Word
     end
   end
 
-  def self.edit_def(new_def, id)
-    if (@@words != [])
-      @@words.each_with_index do |word, i|
-        if (i === id - 1)
-        word.definition = new_def
-        end
-      end
-    end
+  def edit_def(new_def)
+    self.definition = new_def  
   end
 
   def self.another_def(defintion, id)

@@ -59,7 +59,7 @@ describe Word do
     Word.clear
     test_word = Word.new({:word => "Ruby", :definition => "Programming language"})
     test_word.save
-    Word.edit_def("This is a test", 1)
+    test_word.edit_def("This is a test")
 
     expect(test_word.definition).to eq "This is a test"
     end
